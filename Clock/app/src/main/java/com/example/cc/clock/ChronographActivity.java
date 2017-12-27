@@ -11,7 +11,7 @@ import android.widget.TextView;
 import java.util.TimerTask;
 import java.util.Timer;
 
-public class Chronograph extends AppCompatActivity implements
+public class ChronographActivity extends AppCompatActivity implements
         Chronometer.OnChronometerTickListener, View.OnClickListener {
 
     private Chronometer chronometer;

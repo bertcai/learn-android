@@ -6,11 +6,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EdgeEffect;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class Timer extends AppCompatActivity {
+public class TimerActivity extends AppCompatActivity {
 
     private String time;
     private int timeToSecond(String s) {
@@ -52,7 +51,7 @@ public class Timer extends AppCompatActivity {
             public void onClick(View view) {
                 String inputText = editText.getText().toString();
                 time = inputText;
-                Toast.makeText(Timer.this,
+                Toast.makeText(TimerActivity.this,
                         "success!",
                         Toast.LENGTH_LONG).show();
                 int second;

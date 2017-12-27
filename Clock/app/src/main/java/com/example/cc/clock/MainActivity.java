@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent timerIntent = new Intent(MainActivity.this,
-                        Timer.class);
+                        TimerActivity.class);
                 startActivity(timerIntent);
             }
         });
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent chronIntent = new Intent(MainActivity.this,
-                        Chronograph.class);
+                        ChronographActivity.class);
                 startActivity(chronIntent);
             }
         });
