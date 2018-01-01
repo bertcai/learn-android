@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">LoginAndRegistDemo</string>
+    <string name="main_text">Login Success,Now you are in main pager!</string>
+    <string name="username_error">Username Error</string>
+    <string name="password_error">Password Error</string>
+</resources>
