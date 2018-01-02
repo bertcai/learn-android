@@ -2,6 +2,8 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
+    <color name="dialerButtonColor">#039BE5</color>
+    <color name="dialerPressButtonColor">#81D4FA</color>
     <color name="colorAccent">#FF4081</color>
     <color name="lineTitleCall">#25BB00</color>
     <color name="lineTitleContract">#00FFFF</color>

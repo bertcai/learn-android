@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by cc on 17-12-29.
@@ -15,10 +16,14 @@ import java.util.ArrayList;
 public class AdapterViewerPager extends PagerAdapter {
     private Context context;
     private ArrayList<ImageView> mViewList;
+    ArrayList<String> titleList = new ArrayList<>();
+    private static final String[] mTitles = {"tab1", "tab2", "tab3"};
 
-    public AdapterViewerPager(Context context,  ArrayList<ImageView> views){
+    public AdapterViewerPager(Context context, ArrayList<ImageView> views,
+                              ArrayList<String> titleList) {
         mViewList = views;
         this.context = context;
+        this.titleList = titleList;
     }
 
     @Override
@@ -40,5 +45,10 @@ public class AdapterViewerPager extends PagerAdapter {
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
         container.removeView(mViewList.get(position));
+    }
+
+    @Override
+    public CharSequence getPageTitle(int position) {
+        return mTitles[position];
     }
 }

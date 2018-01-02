@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     List<Fragment> fragmentList;
     AdapterFragment adapterFragment;
     TabLayout tableLayout;
+    ArrayList<String> titleList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         itemList = new ArrayList<>();
         imageViewArrayList = new ArrayList<>();
         fragmentList = new ArrayList<>();
+        titleList = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
             itemList.add(R.drawable.m1);
         }
@@ -48,9 +50,11 @@ public class MainActivity extends AppCompatActivity {
             MyFragment myFragment = new MyFragment();
             fragmentList.add(myFragment);
         }
-        adapterViewerPager = new AdapterViewerPager(this, imageViewArrayList);
+        titleList.add("通话");
+        titleList.add("联系人");
+        adapterViewerPager = new AdapterViewerPager(this, imageViewArrayList, titleList);
         FragmentManager fragmentManager = getSupportFragmentManager();
-        adapterFragment = new AdapterFragment(fragmentManager, fragmentList);
+        adapterFragment = new AdapterFragment(fragmentManager, fragmentList,titleList);
         viewPager = (ViewPager) findViewById(R.id.view_page);
         viewPager.setAdapter(adapterFragment);
         tableLayout = (TabLayout) findViewById(R.id.tabs);
