@@ -28,6 +28,11 @@ public class RegisterActivity extends AppCompatActivity implements
     private EditText password2;
     private Button registerBtn;
     private RegisterPresenter presenter;
+    private String databaseName = "Key.db";
+    private String tableName = "Key";
+
+    //table Key contains:
+    //id(int)---username(string)---password(string)
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +40,7 @@ public class RegisterActivity extends AppCompatActivity implements
         setContentView(R.layout.activity_registe);
 
 
-        databaseHelper = new DatabaseHelper(this, "Key.db",
+        databaseHelper = new DatabaseHelper(this, databaseName,
                 null, 1);
         databaseHelper.getWritableDatabase();
         progressBar = (ProgressBar) findViewById(R.id.register_progress);
@@ -82,13 +87,13 @@ public class RegisterActivity extends AppCompatActivity implements
 
     @Override
     public void notSamePassword() {
-        Toast.makeText(this, "The tow password is not same :(",
+        Toast.makeText(this, R.string.not_same_error,
                 Toast.LENGTH_LONG).show();
     }
 
     @Override
     public void registerSuccess() {
-        Toast.makeText(this, "Register Success : )",
+        Toast.makeText(this, R.string.register_success,
                 Toast.LENGTH_LONG).show();
     }
 
@@ -98,13 +103,13 @@ public class RegisterActivity extends AppCompatActivity implements
 //        editor.putString(username, password);
 //        editor.apply();
         SQLiteDatabase db = databaseHelper.getWritableDatabase();
-        Cursor cursor = db.query("Key",
+        Cursor cursor = db.query(tableName,
                 new String[]{"username"},
                 "username=?",
                 new String[]{username}, null, null, null);
         if (cursor.moveToFirst()) {
             if (cursor.getString(0).equals(username)) {
-                Toast.makeText(this, "The username has been registered:(",
+                Toast.makeText(this, R.string.username_exist_error,
                         Toast.LENGTH_LONG).show();
                 progressBar.setVisibility(View.GONE);
                 cursor.close();
@@ -115,7 +120,7 @@ public class RegisterActivity extends AppCompatActivity implements
         ContentValues values = new ContentValues();
         values.put("username", username);
         values.put("password", password);
-        db.insert("Key", null, values);
+        db.insert(tableName, null, values);
         return true;
     }
 

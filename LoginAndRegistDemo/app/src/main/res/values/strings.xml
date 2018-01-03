@@ -1,6 +1,9 @@
 <resources>
-    <string name="app_name">LoginAndRegistDemo</string>
+    <string name="app_name">LoginAndRegisterDemo</string>
     <string name="main_text">Login Success,Now you are in main pager!</string>
-    <string name="username_error">Username Error</string>
+    <string name="username_error">Username should be [A-Za-z][A-Za-z0-9_]+ !</string>
     <string name="password_error">Password Error</string>
+    <string name="not_same_error">The tow password is not same : ( !</string>
+    <string name="register_success">Register success : )!</string>
+    <string name="username_exist_error">The username has been registered: (!</string>
 </resources>

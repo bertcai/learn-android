@@ -9,7 +9,9 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 
 public class DatabaseHelper extends SQLiteOpenHelper {
-    public static final String CREATE_KEY = "create table Key(" +
+    private static final String TABLE_NAME= "Key";
+
+    public static final String CREATE_KEY = "create table "+TABLE_NAME+ "(" +
             "id integer primary key autoincrement," +
             "username text," +
             "password text)";

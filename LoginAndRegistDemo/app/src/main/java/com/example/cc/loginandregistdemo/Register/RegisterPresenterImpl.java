@@ -13,7 +13,7 @@ public class RegisterPresenterImpl implements RegisterPresenter,
     private RegisterView registerView;
     private RegisterInteractor registerInteractor;
 
-    public RegisterPresenterImpl(RegisterView registerView, RegisterInteractorImpl registerInteractor) {
+    public RegisterPresenterImpl(RegisterView registerView, RegisterInteractor registerInteractor) {
         this.registerView = registerView;
         this.registerInteractor = registerInteractor;
     }
